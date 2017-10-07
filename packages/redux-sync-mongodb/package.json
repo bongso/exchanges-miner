@@ -1,0 +1,30 @@
+{
+  "name": "redux-sync-mongodb",
+  "version": "0.1.0",
+  "description": "push action payload to mongodb",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bongso/exchanges-miner.git"
+  },
+  "keywords": [
+    "redux",
+    "sync",
+    "mongodb",
+    "redux-middleware"
+  ],
+  "author": "bglee <deptno@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bongso/exchanges-miner/issues"
+  },
+  "homepage": "https://github.com/bongso/exchanges-miner#readme",
+  "devDependencies": {
+    "@types/mongodb": "^2.2.13",
+    "@types/node": "^8.0.33",
+    "@types/redux": "^3.6.0"
+  }
+}

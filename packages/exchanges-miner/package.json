@@ -1,0 +1,26 @@
+{
+  "name": "exchanges-miner",
+  "version": "0.1.0",
+  "description": "mining from coin-exchanges",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bongso/exchanges-miner.git"
+  },
+  "keywords": [
+    "exchanges"
+  ],
+  "author": "bglee <deptno@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bongso/exchanges-miner/issues"
+  },
+  "homepage": "https://github.com/bongso/exchanges-miner#readme",
+  "dependencies": {
+    "redux": "^3.7.2",
+    "redux-fetch": "https://github.com/deptno/redux-fetch"
+  }
+}
