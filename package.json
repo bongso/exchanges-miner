@@ -1,5 +1,9 @@
 {
+  "scripts": {
+    "build": "lerna run build"
+  },
   "devDependencies": {
-    "lerna": "^2.2.0"
+    "lerna": "^2.2.0",
+    "typescript": "^2.5.3"
   }
 }

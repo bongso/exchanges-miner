@@ -4,6 +4,8 @@
   "description": "mining from coin-exchanges",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/index",
+    "build": "tsc",
     "test": "jest"
   },
   "repository": {
@@ -20,7 +22,14 @@
   },
   "homepage": "https://github.com/bongso/exchanges-miner#readme",
   "dependencies": {
+    "bit-stream": "^0.1.0",
     "redux": "^3.7.2",
-    "redux-fetch": "https://github.com/deptno/redux-fetch"
+    "redux-fetch": "https://github.com/deptno/redux-fetch",
+    "redux-sync-mongodb": "^0.1.0",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.33",
+    "typescript": "^2.5.3"
   }
 }

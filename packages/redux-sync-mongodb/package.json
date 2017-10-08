@@ -2,8 +2,10 @@
   "name": "redux-sync-mongodb",
   "version": "0.1.0",
   "description": "push action payload to mongodb",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "type": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "repository": {
@@ -26,5 +28,8 @@
     "@types/mongodb": "^2.2.13",
     "@types/node": "^8.0.33",
     "@types/redux": "^3.6.0"
+  },
+  "dependencies": {
+    "mongodb": "^2.2.31"
   }
 }
