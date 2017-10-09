@@ -1,8 +1,8 @@
-export * from './dispatcher'
+export * from './redux-catch'
 
 import {Middleware} from 'redux'
 import {CollectionInsertManyOptions, CollectionInsertOneOptions, MongoClient} from 'mongodb'
-import {DB_SYNC} from './dispatcher'
+import {DB_SYNC} from './redux-catch'
 
 export interface Argument {
   mongoDbUrl: string
