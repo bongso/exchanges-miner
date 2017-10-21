@@ -37,7 +37,9 @@ enum ActionTypes {
 const TICKER = createActions(ActionTypes.Ticker)
 
 export function coinoneApiTicker(currency: string = 'btc') {
-  return GET(`${PUBLIC_API.Ticker}/${qs.stringify({currency})}`, TICKER)
+  return GET(PUBLIC_API.Ticker, TICKER, {
+    query: qs.stringify({currency})
+  })
 }
 
 const END_POINT = 'https://api.coinone.co.kr'

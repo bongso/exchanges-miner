@@ -3,7 +3,6 @@ import {reducer, RootState} from './reducer'
 import thunk from 'redux-thunk'
 import {createMongoDbSyncMiddleware, createReduxCatchMiddleware, DB_SYNC} from 'redux-sync-mongodb'
 import {MONGODB} from './constatns/index'
-import {} from 'redux-sync-mongodb'
 
 const mongoDbSyncMiddleware = createMongoDbSyncMiddleware({
   mongoDbUrl: MONGODB,
