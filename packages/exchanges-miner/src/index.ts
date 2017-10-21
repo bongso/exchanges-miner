@@ -1,6 +1,5 @@
 import {store} from './store'
-import {bithumbApiTicker, BTC} from 'bit-stream'
-import {coinoneApiTicker} from '../../bit-stream/src/modules/api/coinone/index'
+import {bithumbApiTicker, coinoneApiTicker, BTC} from 'bit-stream'
 
 let count = 0
 

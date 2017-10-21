@@ -105,14 +105,14 @@ export interface BithumbPublicTicker {
   volume_7day: string // 최근 7일간 Currency 거래량
   buy_price: string // 거래 대기건 최고 구매가
   sell_price: string // 거래 대기건 최소 판매가
-  date: Date //	현재 시간 Timestamp
+  date: string //	현재 시간 Timestamp
 }
 
 // https://api.bithumb.com/public/orderbook/{currency}
 // bithumb 거래소 판/구매 등록 대기 또는 거래 중 내역 정보
 
 export interface BithumbPublicOrderBook {
-  timestamp: Date // 현재 시간 Timestamp
+  timestamp: string // 현재 시간 Timestamp
   order_currency: Currency // 주문 화폐단위
   payment_currency: Currency // 결제 화폐단위
   bids: TransactionData[] // 구매요청
@@ -123,7 +123,7 @@ export interface BithumbPublicOrderBook {
 // bithumb 거래소 거래 체결 완료 내역
 
 export interface BithumbPublicRecentTransactions {
-  transaction_date: Date //	거래 채결 시간
+  transaction_date: string //	거래 채결 시간
   type: TransactionType // 판/구매 (ask, bid)
   units_traded: string //	거래 Currency 수량
   price: string // 1Currency 거래 금액
@@ -142,5 +142,3 @@ export type TransactionType = ASK | BID
 
 export type ASK = 'ask'
 export type BID = 'bid'
-
-export type Date = string

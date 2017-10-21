@@ -1,6 +1,7 @@
 {
   "scripts": {
     "start": "time node ./packages/exchanges-miner/dist/index",
+    "bootstrap": "lerna bootstrap",
     "build": "lerna bootstrap && lerna run --ignore exchanges-miner tsc && lerna run build"
   },
   "devDependencies": {

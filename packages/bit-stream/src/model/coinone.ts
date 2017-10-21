@@ -39,7 +39,7 @@ export class CoinoneTicker extends Model<CoinonePublicTicker> {
 export interface CoinonePublicTicker {
   volume: string
   last: string
-  timestamp: Date
+  timestamp: string
   high: string
   result: string
   errorCode: string
@@ -47,5 +47,3 @@ export interface CoinonePublicTicker {
   low: string
   currency: string
 }
-
-export type Date = string

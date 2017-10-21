@@ -1,4 +1,5 @@
 export * from './bithumb'
+export * from './coinone'
 
 export type ALL = 'ALL'
 export const ALL = 'ALL'
@@ -16,5 +17,7 @@ export type XRP = 'XRP'
 export const XRP = 'XRP'
 export type BCH = 'BCH'
 export const BCH = 'BCH'
+
+export type Date = string
 
 export type Currency = ALL | BTC | ETH | DASH | LTC | ETC | XRP | BCH
