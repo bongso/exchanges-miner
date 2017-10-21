@@ -6,6 +6,7 @@ let count = 0
 
 async function get() {
   store.dispatch(coinoneApiTicker())
+  store.dispatch(bithumbApiTicker(BTC))
   count++
 }
 
@@ -17,4 +18,4 @@ process.on('SIGINT', () => {
 
 console.log(`start at: ${new Date().toISOString()}`)
 
-setInterval(get, 1000)
+setInterval(get, 3000)

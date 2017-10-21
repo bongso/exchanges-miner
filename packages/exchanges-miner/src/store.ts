@@ -4,7 +4,6 @@ import thunk from 'redux-thunk'
 import {createMongoDbSyncMiddleware, createReduxCatchMiddleware, DB_SYNC} from 'redux-sync-mongodb'
 import {MONGODB} from './constatns/index'
 import {} from 'redux-sync-mongodb'
-import {deepEqual} from 'assert'
 
 const mongoDbSyncMiddleware = createMongoDbSyncMiddleware({
   mongoDbUrl: MONGODB,
@@ -16,8 +15,6 @@ const dbSyncActionDispatcherMiddleware = createReduxCatchMiddleware<RootState>({
     const [exchange, api] = action
 
     try {
-      const recentValue = getState()[exchange][api]
-      // deepEqual(recentValue, action.payload)
       dispatch({
         type: [DB_SYNC, action.type].join(' '),
         payload: action.payload
