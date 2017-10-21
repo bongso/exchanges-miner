@@ -1,12 +1,12 @@
 import {GET, ReduxFetchAction} from 'redux-fetch'
 import {createActions, SUCCESS} from '../../common'
 import {
-  OrderBook,
-  PublicOrderBook,
-  PublicTicker,
-  Ticker,
-  Transaction,
-  PublicRecentTransactions
+  BithumbOrderBook,
+  BithumbPublicOrderBook,
+  BithumbPublicTicker,
+  BithumbTicker,
+  BithumbTransaction,
+  BithumbPublicRecentTransactions
 } from '../../../model/bithumb'
 import {Reducer} from 'redux'
 import {Currency} from '../../../model/index'
@@ -17,12 +17,12 @@ const defaultState = {
   transactions: []
 }
 
-export const reducer: Reducer<Bithumb> = (state = defaultState, action: ReduxFetchAction<any>) => {
+export const bithumb: Reducer<Bithumb> = (state = defaultState, action: ReduxFetchAction<any>) => {
   switch (action.type) {
     case TICKER[SUCCESS]: {
       const {payload} = action as ReduxFetchAction<BithumbResTicker>
       const ticker    = payload.data
-      const tickers   = [new Ticker(ticker)].concat(state.tickers)
+      const tickers   = [new BithumbTicker(ticker)].concat(state.tickers)
       return {
         ...state,
         tickers
@@ -31,7 +31,7 @@ export const reducer: Reducer<Bithumb> = (state = defaultState, action: ReduxFet
 
     case ORDER_BOOK[SUCCESS]: {
       const {payload}  = action as ReduxFetchAction<BithumbResOrderBook>
-      const orderBooks = [new OrderBook(payload.data)].concat(state.orderBooks)
+      const orderBooks = [new BithumbOrderBook(payload.data)].concat(state.orderBooks)
       return {
         ...state,
         orderBooks
@@ -41,7 +41,7 @@ export const reducer: Reducer<Bithumb> = (state = defaultState, action: ReduxFet
     case TRANSACTIONS[SUCCESS]: {
       const {payload}         = action as ReduxFetchAction<BithumbResRecentTransactions>
       const latestTransaction = (state.transactions || [])[0]
-      let data                = payload.data.map(transaction => new Transaction(transaction))
+      let data                = payload.data.map(transaction => new BithumbTransaction(transaction))
 
       if (latestTransaction) {
         const index = data.findIndex(tr => {
@@ -95,9 +95,9 @@ const PUBLIC_API       = {
 }
 
 export interface Bithumb {
-  tickers: Ticker[]
-  orderBooks: OrderBook[]
-  transactions: Transaction[]
+  tickers: BithumbTicker[]
+  orderBooks: BithumbOrderBook[]
+  transactions: BithumbTransaction[]
 }
 
 type StatusCode = {
@@ -112,9 +112,9 @@ type StatusCode = {
   5900: 'Unknown Error'
 }
 
-type BithumbResTicker = BithumbResponse<PublicTicker>
-type BithumbResOrderBook = BithumbResponse<PublicOrderBook>
-type BithumbResRecentTransactions = BithumbResponse<PublicRecentTransactions[]>
+type BithumbResTicker = BithumbResponse<BithumbPublicTicker>
+type BithumbResOrderBook = BithumbResponse<BithumbPublicOrderBook>
+type BithumbResRecentTransactions = BithumbResponse<BithumbPublicRecentTransactions[]>
 
 interface BithumbResponse<T> {
   status: keyof StatusCode

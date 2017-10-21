@@ -2,7 +2,7 @@ import {Model} from './model'
 import * as moment from 'moment'
 import {Currency} from './index'
 
-export class Ticker extends Model<PublicTicker> {
+export class BithumbTicker extends Model<BithumbPublicTicker> {
   get openingPrice() {
     return this.cacheNumber('opening_price')
   }
@@ -48,7 +48,7 @@ export class Ticker extends Model<PublicTicker> {
   }
 }
 
-export class OrderBook extends Model<PublicOrderBook> {
+export class BithumbOrderBook extends Model<BithumbPublicOrderBook> {
   get timestamp() {
     return this.cacheDate('timestamp')
   }
@@ -69,7 +69,7 @@ export class OrderBook extends Model<PublicOrderBook> {
   }
 }
 
-export class Transaction extends Model<PublicRecentTransactions> {
+export class BithumbTransaction extends Model<BithumbPublicRecentTransactions> {
   get type(): TransactionType {
     return this.cache('type')
   }
@@ -94,7 +94,7 @@ export class Transaction extends Model<PublicRecentTransactions> {
 // https://api.bithumb.com/public/ticker/{currency}
 // bithumb 거래소 마지막 거래 정보
 
-export interface PublicTicker {
+export interface BithumbPublicTicker {
   opening_price: string // 최근 24시간 내 시작 거래금액
   closing_price: string // 최근 24시간 내 마지막 거래금액
   min_price: string // 최근 24시간 내 최저 거래금액
@@ -111,7 +111,7 @@ export interface PublicTicker {
 // https://api.bithumb.com/public/orderbook/{currency}
 // bithumb 거래소 판/구매 등록 대기 또는 거래 중 내역 정보
 
-export interface PublicOrderBook {
+export interface BithumbPublicOrderBook {
   timestamp: Date // 현재 시간 Timestamp
   order_currency: Currency // 주문 화폐단위
   payment_currency: Currency // 결제 화폐단위
@@ -122,7 +122,7 @@ export interface PublicOrderBook {
 // https://api.bithumb.com/public/recent_transactions/{currency}
 // bithumb 거래소 거래 체결 완료 내역
 
-export interface PublicRecentTransactions {
+export interface BithumbPublicRecentTransactions {
   transaction_date: Date //	거래 채결 시간
   type: TransactionType // 판/구매 (ask, bid)
   units_traded: string //	거래 Currency 수량
