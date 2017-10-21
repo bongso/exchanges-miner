@@ -1,9 +1,9 @@
 import {applyMiddleware, createStore, Store} from 'redux'
 import {reducer, RootState} from './reducer'
 import thunk from 'redux-thunk'
-import {createMongoDbSyncMiddleware, createReduxCatchMiddleware} from 'redux-sync-mongodb'
+import {createMongoDbSyncMiddleware, createReduxCatchMiddleware, DB_SYNC} from 'redux-sync-mongodb'
 import {MONGODB} from './constatns/index'
-import {DB_SYNC} from '../dist/redux-sync-mongodb/dispatcher'
+import {} from 'redux-sync-mongodb'
 import {deepEqual} from 'assert'
 
 const mongoDbSyncMiddleware = createMongoDbSyncMiddleware({

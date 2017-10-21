@@ -9,10 +9,9 @@
   "license": "ISC",
   "scripts": {
     "clear": "rm -r dist",
-    "build": "tsc",
+    "tsc": "tsc",
     "dev": "node index",
-    "test": "jest",
-    "postinstall": "npm run build"
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^20.0.8",

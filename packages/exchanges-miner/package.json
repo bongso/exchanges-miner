@@ -25,7 +25,7 @@
     "bit-stream": "^0.1.0",
     "redux": "^3.7.2",
     "redux-fetch": "https://github.com/deptno/redux-fetch",
-    "redux-sync-mongodb": "^0.1.0",
+    "redux-sync-mongodb": "*",
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
